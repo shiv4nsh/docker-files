@@ -19,11 +19,11 @@ RUN wget -q -O - http://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/apa
       && ln -s /usr/local/apache-maven/bin/mvn /usr/local/bin/mvn
 
 # Pre-cache Druid dependencies 
-RUN mvn dependency:get -Dartifact=io.druid:druid-services:0.7.3
+RUN mvn dependency:get -Dartifact=io.druid:druid-services:0.9.1.1
 
 #Install Druid
-RUN curl http://static.druid.io/artifacts/releases/druid-0.7.3-bin.tar.gz | tar xz
-RUN mv druid-0.7.3 druid-services
+RUN curl http://static.druid.io/artifacts/releases/druid-0.9.1.1-bin.tar.gz | tar xz
+RUN mv druid-0.9.1.1 druid-services
 
 
 
@@ -43,7 +43,7 @@ RUN mysqld_safe & mysqladmin --wait=5 ping && \
 
 # Pull dependencies for Druid extensions
 WORKDIR /druid-services
-RUN java -classpath "config/_common:lib/*" io.druid.cli.Main tools pull-deps
+RUN java -classpath "config/_common:lib/*" io.druid.cli.Main --clean tools pull-deps
 
 # RUN Druid
 ADD start.sh /druid-services/start.sh
