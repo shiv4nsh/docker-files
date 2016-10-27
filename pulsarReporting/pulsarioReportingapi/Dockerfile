@@ -19,10 +19,10 @@ RUN apt-get update && apt-get install -y git wget tar
 # Tomcat 8
 #
 # Not available on yum, so install manually
-RUN wget -O /tmp/apache-tomcat-8.0.28.tar.gz http://apache.mirrors.lucidnetworks.net/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz
-RUN cd /usr/local && tar xzf /tmp/apache-tomcat-8.0.28.tar.gz
-RUN ln -s /usr/local/apache-tomcat-8.0.28 /usr/local/tomcat
-RUN rm /tmp/apache-tomcat-8.0.28.tar.gz
+RUN wget -O /tmp/apache-tomcat-8.0.38.tar.gz http://mirror.fibergrid.in/apache/tomcat/tomcat-8/v8.0.38/bin/apache-tomcat-8.0.38-deployer.tar.gz
+RUN cd /usr/local && tar xzf /tmp/apache-tomcat-8.0.38.tar.gz
+RUN ln -s /usr/local/apache-tomcat-8.0.38 /usr/local/tomcat
+RUN rm /tmp/apache-tomcat-8.0.38.tar.gz
 
 
 # Maven

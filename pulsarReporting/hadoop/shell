@@ -1,1 +1,1 @@
-docker run --net=host --name pulsarioHadoop -ti pulsario-hadoop /etc/bootstrap.sh -d
+docker run -p 50070:50070 --name pulsarioHadoop -t -i pulsario-hadoop /etc/bootstrap.sh -d

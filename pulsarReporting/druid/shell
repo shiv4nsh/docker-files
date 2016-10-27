@@ -1,1 +1,1 @@
-docker run -p 8081:8081 -p 8082:8082 -p 8083:8083 -p 8090:8090 -p 8084:8084 -p 3306:3306 --add-host pulsarioDruid:$1 --add-host pulsarioMemcached:$2 --add-host pulsarioHadoop:$3 --add-host pulsarioKafka:$4 --add-host pulsarioZookeeper:$5 --name pulsarioDruid -d pulsario-druid ./start.sh
+docker run -p 7081:8081 -p 7082:8082 -p 7083:8083 -p 7090:8090 -p 7084:8084 -p 2306:3306 --add-host pulsarioDruid:$1 --add-host pulsarioMemcached:$2 --add-host pulsarioHadoop:$3 --add-host pulsarioKafka:$4 --add-host pulsarioZookeeper:$5 --name pulsarioDruid -d pulsario-druid ./start.sh
